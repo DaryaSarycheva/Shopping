@@ -1,37 +1,27 @@
-.coolTitle {
-  text-align: center;
-  font-family: 'Oswald', Helvetica, sans-serif;
-  font-size: 40px;
-  transform: skewY(-10deg);
-  letter-spacing: 4px;
-  word-spacing: -8px;
-  color: tomato;
-  text-shadow: 
-    -1px -1px 0 firebrick,
-    -2px -2px 0 firebrick,
-    -3px -3px 0 firebrick,
-    -4px -4px 0 firebrick,
-    -5px -5px 0 firebrick,
-    -6px -6px 0 firebrick,
-    -7px -7px 0 firebrick,
-    -8px -8px 0 firebrick,
-    -30px 20px 40px dimgrey;
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+
+body {
+  background-image: url("backgroung.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+input, body, button {
+  font-family: "Indie Flower", cursive;
+}
+.btn {
+  display: inline;
+  border-color: white;
+  background-color: white;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  color: #952323;
+  padding: 3px;
+  
 }
 
-.done {
-  text-decoration: line-through;
+#toDoList{
+  
 }
-.delete{
-  display: flex;
-}
-
-
-
-
-/*1. If you click on the list item, it toggles the .done  class on and off.
-
-2. Add buttons next to each list item to delete the item when clicked 
-on its corresponding delete button.
-
-3. BONUS: When adding a new list item, it automatically adds the delete 
-button next to it (hint: be sure to check if new items are clickable too!)*/

@@ -1,7 +1,8 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
-var li=document.getElementsByTagName("li")
+
+
 
 function inputLength() {
 	return input.value.length;
@@ -12,12 +13,11 @@ function createListElement() {
 	li.appendChild(document.createTextNode(input.value));
 	ul.appendChild(li);
 	input.value = "";
-}
 
-function crossListElement(event) {
-
-	event.target.classList.toggle("done");
-
+	var deleteButton = document.createElement("button");
+	deleteButton.appendChild(document.createTextNode("Done"));
+	li.appendChild(deleteButton);
+	deleteButton.setAttribute("class", "btn");	
 }
 
 function addListAfterClick() {
@@ -27,18 +27,19 @@ function addListAfterClick() {
 }
 
 function addListAfterKeypress(event) {
-	if (inputLength() > 0 && event.keyCode === 13) {
+	if (inputLength() > 0 && event.key === "Enter") {
 		createListElement();
 	}
 }
 
+function deleteListElement(event) {
+    var div = event.target.parentElement;
+    ul.removeChild(div);
+}
 
-
+ul.addEventListener("click", deleteListElement);
 
 button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
 
-for (var i = 0; i < li.length; i++) {
-    li[i].addEventListener("click", crossListElement);
-}
